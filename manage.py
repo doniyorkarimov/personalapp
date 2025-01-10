@@ -24,5 +24,3 @@ if __name__ == "__main__":
     execute_from_command_line(["manage.py", "runserver", f"0.0.0.0:{port}"])
 
 
-if __name__ == '__main__':
-    main()
