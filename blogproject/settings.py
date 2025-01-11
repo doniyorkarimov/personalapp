@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'django_quill',
     'taggit',
+    'jazzmin',
+
 ]
 
 MIDDLEWARE = [
