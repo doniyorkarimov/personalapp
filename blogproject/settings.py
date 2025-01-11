@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -43,7 +44,7 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'django_quill',
     'taggit',
-    'jazzmin',
+    
 
 ]
 
@@ -139,3 +140,44 @@ AUTH_USER_MODEL = 'userapp.UserProfile'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+JAZZMIN_SETTINGS = {
+    'site_title': 'Sizning Sayt Nomini',  # Admin panel nomi
+    'site_header': 'Admin Panel',  # Admin panel sarlavhasi
+    'site_brand': 'Sizning Sayt Brandi',  # Sayt brendi
+    'welcome_sign': 'Admin Panelga Xush Kelibsiz',  # Kirishdagi xush kelibsiz yozuvi
+    'show_ui_builder': True,  # UI dizaynini sozlashni ko'rsatish
+    'theme': 'dark',  # Yoki 'light' - admin panelni qorong'u yoki yorqin holatda ko'rsatish
+}
+
+JAZZMIN_UI_TWEAKS = {
+    "navbar_small_text": False,
+    "footer_small_text": False,
+    "body_small_text": False,
+    "brand_small_text": False,
+    "brand_colour": False,
+    "accent": "accent-primary",
+    "navbar": "navbar-white navbar-light",
+    "no_navbar_border": False,
+    "navbar_fixed": False,
+    "layout_boxed": False,
+    "footer_fixed": False,
+    "sidebar_fixed": False,
+    "sidebar": "sidebar-dark-primary",
+    "sidebar_nav_small_text": False,
+    "sidebar_disable_expand": False,
+    "sidebar_nav_child_indent": False,
+    "sidebar_nav_compact_style": False,
+    "sidebar_nav_legacy_style": False,
+    "sidebar_nav_flat_style": False,
+    "theme": "default",
+    "dark_mode_theme": None,
+    "button_classes": {
+        "primary": "btn-primary",
+        "secondary": "btn-secondary",
+        "info": "btn-info",
+        "warning": "btn-warning",
+        "danger": "btn-danger",
+        "success": "btn-success"
+    }
+}
