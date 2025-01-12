@@ -7,52 +7,7 @@ from django.views import View
 from .models import *
 
 from django.views.generic import TemplateView, ListView
-from reportlab.lib.pagesizes import letter
-from reportlab.pdfgen import canvas
-
-def generate_pdf(request):
-    # PDF faylini yaratish
-    response = HttpResponse(content_type='application/pdf')
-    response['Content-Disposition'] = 'attachment; filename="categories.pdf"'
-
-    # Canvas yaratish
-    p = canvas.Canvas(response, pagesize=letter)
-    width, height = letter
-
-    # PDF ga ma'lumot qo'shish
-    p.drawString(100, height - 50, "Kategoriyalar ro'yxati:")
-    
-    # Kategoriyalarni olish
-    categories = Category.objects.all()
-    y_position = height - 100  # Boshlang'ich y pozitsiyasi
-
-    for category in categories:
-        p.drawString(100, y_position, f"ID: {category.id}, Nomi: {category.name}")
-        y_position -= 20  # Har bir kategoriya uchun joy qoldirish
-
-    # PDF ni saqlash
-    p.showPage()
-    p.save()
-    return response
-
-
-# def searchbar(request):
-#     if request.metod=='GET':
-#         query = request.GET.query('query')
-#         if query:
-#             category = Category.objects.filter(name__icontains=query)
-#             return render(request, 'search.html', {'category':category})    
-# class SearchView(View):
-#     def get(self, request):
-#         form = SearchForm()
-#         result = []
-
-#         if 'query' in request.GET:
-#             form = SearchForm(request.GET)
-#             if form.is_valid():
-#                 query = form.cleaned_data['query']
-#                 result = Category.objects.filter(name__icontains=query)
-#         return render(request, 'search.html', {'form':form, 'result':result})        
+     
 
 class BasicView:
     def category(self):
